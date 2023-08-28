@@ -9,3 +9,7 @@ This landing page was built using the following technologies:
 - 🔗 [Tailwind CSS](https://tailwindcss.com/)
 - 🔗 [Flowbite Library](https://flowbite.com/docs/getting-started/introduction/)
 - 🔗 [Flowbite Blocks](https://flowbite.com/blocks/)
+
+add this tools for more update
+-privew sample
+-dark mode

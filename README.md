@@ -10,6 +10,13 @@ This landing page was built using the following technologies:
 - 🔗 [Flowbite Library](https://flowbite.com/docs/getting-started/introduction/)
 - 🔗 [Flowbite Blocks](https://flowbite.com/blocks/)
 
+Run npm install inside your terminal
+
+Watch for files and compile Tailwind CSS + Flowbite:
+
+npx tailwindcss -i ./input.css -o ./output.css --watch
+To deploy you will only need the index.html file and the output.css styles.
+
 add this tools for more update
 -privew sample
 -dark mode

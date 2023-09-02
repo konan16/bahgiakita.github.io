@@ -586,6 +586,10 @@
         htmlElement.classList.add("dark");
         darkIcon.classList.add("hidden");
         lightIcon.classList.remove("hidden");
+
+        // Set cookie dengan mode gelap dengan path '/'
+        document.cookie =
+          "darkMode=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/;";
       }
 
       // Fungsi untuk menonaktifkan mode gelap
@@ -597,21 +601,38 @@
         htmlElement.classList.remove("dark");
         darkIcon.classList.remove("hidden");
         lightIcon.classList.add("hidden");
+
+        // Set cookie dengan mode terang dengan path '/'
+        document.cookie =
+          "darkMode=false; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/;";
       }
 
-      // Fungsi untuk memeriksa status sistem mode (light atau dark)
-      function checkSystemMode() {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          // Mode sistem gelap aktif, aktifkan mode gelap
+      // Fungsi untuk mengambil nilai darkMode dari cookie
+      function getDarkModeFromCookie() {
+        const cookies = document.cookie.split("; ");
+        const darkModeCookie = cookies.find((cookie) =>
+          cookie.startsWith("darkMode=")
+        );
+
+        if (darkModeCookie) {
+          return darkModeCookie.split("=")[1] === "true";
+        }
+
+        return false; // Default ke mode terang jika cookie tidak ada
+      }
+
+      // Fungsi untuk mengatur tema berdasarkan cookie saat halaman dimuat kembali
+      function setThemeFromCookie() {
+        const isDarkMode = getDarkModeFromCookie();
+        if (isDarkMode) {
           activateDarkMode();
         } else {
-          // Mode sistem terang aktif, nonaktifkan mode gelap
           deactivateDarkMode();
         }
       }
 
-      // Panggil fungsi untuk memeriksa status sistem mode saat halaman dimuat
-      checkSystemMode();
+      // Panggil fungsi untuk mengatur tema dari cookie saat halaman dimuat kembali
+      setThemeFromCookie();
 
       // Fungsi untuk mengaktifkan atau menonaktifkan dark mode
       function toggleDarkMode() {
@@ -620,14 +641,8 @@
 
         if (isDarkModeActive) {
           deactivateDarkMode();
-          // Set cookie dengan mode terang
-          document.cookie =
-            "darkMode=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         } else {
           activateDarkMode();
-          // Set cookie dengan mode gelap
-          document.cookie =
-            "darkMode=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/;";
         }
       }
 

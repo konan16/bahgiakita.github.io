@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en" class="scroll-smooth" id="dark-mode-toggle">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,7 +18,9 @@
   </head>
   <body>
     <header class="fixed w-full z-50">
-      <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900 shadow-sm">
+      <nav
+        class="bg-white border-gray-200 py-2.5 dark:bg-gray-800 shadow-sm dark:shadow-md"
+      >
         <div
           class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto"
         >
@@ -34,6 +36,40 @@
             >
           </a>
           <div class="flex items-center lg:order-2">
+            <!-- toogle dark mode -->
+            <button
+              id="theme-toggle"
+              data-tooltip-target="tooltip-toggle"
+              type="button"
+              class="text-gray-500 inline-flex items-center justify-center dark:text-gray-400 hover:bg-gray-100 w-10 h-10 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 m-3"
+            >
+              <svg
+                id="theme-toggle-light-icon"
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-11a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1Zm0 12a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1ZM4.343 5.757a1 1 0 0 0 1.414-1.414L4.343 2.929a1 1 0 0 0-1.414 1.414l1.414 1.414Zm11.314 8.486a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM4 10a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1Zm15-1h-2a1 1 0 1 0 0 2h2a1 1 0 0 0 0-2ZM4.343 14.243l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414a1 1 0 0 0-1.414-1.414ZM14.95 6.05a1 1 0 0 0 .707-.293l1.414-1.414a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 .707 1.707Z"
+                ></path>
+              </svg>
+              <svg
+                id="theme-toggle-dark-icon"
+                class="w-4 h-4 hidden"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 20"
+              >
+                <path
+                  d="M17.8 13.75a1 1 0 0 0-.859-.5A7.488 7.488 0 0 1 10.52 2a1 1 0 0 0 0-.969A1.035 1.035 0 0 0 9.687.5h-.113a9.5 9.5 0 1 0 8.222 14.247 1 1 0 0 0 .004-.997Z"
+                ></path>
+              </svg>
+
+              <span class="sr-only">Toggle dark mode</span>
+            </button>
             <!-- <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a> -->
             <a href="https://wa.me/6283847630740" class="btn-primary"
               >Contact</a
@@ -122,7 +158,10 @@
     </header>
 
     <!-- Start block -->
-    <section class="bg-white dark:bg-gray-900" id="home">
+    <section
+      class="bg-white dark:bg-gradient-to-r dark:from-slate-800 dark:to-slate-700"
+      id="home"
+    >
       <div
         class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28"
       >
@@ -140,20 +179,26 @@
             Anda dengan desain yang elegan dan interaktif.
           </p>
           <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-            <a href="https://wa.me/6283847630740" class="btn-primary"
+            <a
+              href="https://wa.me/6283847630740"
+              class="btn-primary"
+              target="_blank"
               >Pesan sekarang!</a
             >
           </div>
         </div>
         <div class="lg:mt-0 lg:col-span-5 lg:flex">
-          <img src="./images/head.svg" alt="hero image" class="" />
+          <img src="./images/head.svg" alt="hero image" class="dark:" />
         </div>
       </div>
     </section>
     <!-- End block -->
 
     <!-- Start block -->
-    <section class="bg-white dark:bg-gray-900" id="fitur">
+    <section
+      class="bg-white dark:bg-gradient-to-r dark:from-slate-800 dark:to-slate-700"
+      id="fitur"
+    >
       <div
         class="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6"
       >
@@ -179,7 +224,11 @@
           class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0"
         >
           <div>
-            <img src="images/protection.png" alt="" class="h-20 p-3" />
+            <img
+              src="images/protection.png"
+              alt=""
+              class="h-20 p-3 dark:invert"
+            />
             <h3 class="mb-2 text-2xl font-bold dark:text-white">
               Aman dan Terpercaya
             </h3>
@@ -189,7 +238,7 @@
             </p>
           </div>
           <div>
-            <img src="images/task.png" alt="" class="h-20 p-3" />
+            <img src="images/task.png" alt="" class="h-20 p-3 dark:invert" />
             <h3 class="mb-2 text-2xl font-bold dark:text-white">
               Fitur Lengkap
             </h3>
@@ -199,7 +248,11 @@
             </p>
           </div>
           <div>
-            <img src="images/revision.png" alt="" class="h-20 p-3" />
+            <img
+              src="images/revision.png"
+              alt=""
+              class="h-20 p-3 dark:invert"
+            />
 
             <h3 class="mb-2 text-2xl font-bold dark:text-white">
               Bebas Revisi
@@ -210,7 +263,7 @@
             </p>
           </div>
           <div>
-            <img src="images/clock.png" alt="" class="h-20 p-3" />
+            <img src="images/clock.png" alt="" class="h-20 p-3 dark:invert" />
 
             <h3 class="mb-2 text-2xl font-bold dark:text-white">
               Prosees cepat
@@ -384,7 +437,10 @@
                 <span>Masa aktif 6 bulan</span>
               </li>
             </ul>
-            <a href="https://wa.me/6283847630740" class="btn-primary"
+            <a
+              href="https://wa.me/6283847630740"
+              class="btn-primary"
+              target="_blank"
               >Pesan sekarang</a
             >
           </div>
@@ -520,5 +576,66 @@
       </div>
     </footer>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script>
+      // Fungsi untuk mengaktifkan mode gelap
+      function activateDarkMode() {
+        const htmlElement = document.getElementById("dark-mode-toggle");
+        const darkIcon = document.getElementById("theme-toggle-dark-icon");
+        const lightIcon = document.getElementById("theme-toggle-light-icon");
+
+        htmlElement.classList.add("dark");
+        darkIcon.classList.add("hidden");
+        lightIcon.classList.remove("hidden");
+      }
+
+      // Fungsi untuk menonaktifkan mode gelap
+      function deactivateDarkMode() {
+        const htmlElement = document.getElementById("dark-mode-toggle");
+        const darkIcon = document.getElementById("theme-toggle-dark-icon");
+        const lightIcon = document.getElementById("theme-toggle-light-icon");
+
+        htmlElement.classList.remove("dark");
+        darkIcon.classList.remove("hidden");
+        lightIcon.classList.add("hidden");
+      }
+
+      // Fungsi untuk memeriksa status sistem mode (light atau dark)
+      function checkSystemMode() {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          // Mode sistem gelap aktif, aktifkan mode gelap
+          activateDarkMode();
+        } else {
+          // Mode sistem terang aktif, nonaktifkan mode gelap
+          deactivateDarkMode();
+        }
+      }
+
+      // Panggil fungsi untuk memeriksa status sistem mode saat halaman dimuat
+      checkSystemMode();
+
+      // Fungsi untuk mengaktifkan atau menonaktifkan dark mode
+      function toggleDarkMode() {
+        const htmlElement = document.getElementById("dark-mode-toggle");
+        const isDarkModeActive = htmlElement.classList.contains("dark");
+
+        if (isDarkModeActive) {
+          deactivateDarkMode();
+          // Set cookie dengan mode terang
+          document.cookie =
+            "darkMode=false; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else {
+          activateDarkMode();
+          // Set cookie dengan mode gelap
+          document.cookie =
+            "darkMode=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/;";
+        }
+      }
+
+      // Dapatkan tombol tema
+      const themeToggleBtn = document.getElementById("theme-toggle");
+
+      // Tambahkan event listener untuk tombol tema
+      themeToggleBtn.addEventListener("click", toggleDarkMode);
+    </script>
   </body>
 </html>
